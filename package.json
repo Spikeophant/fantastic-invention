@@ -1,0 +1,23 @@
+{
+  "name": "fantastic-invention",
+  "version": "1.0.0",
+  "description": "Work Day Scheduler",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Spikeophant/fantastic-invention.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Spikeophant/fantastic-invention/issues"
+  },
+  "homepage": "https://github.com/Spikeophant/fantastic-invention#readme",
+  "devDependencies": {
+    "eslint": "^8.21.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
