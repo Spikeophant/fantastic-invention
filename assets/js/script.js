@@ -23,7 +23,7 @@ const mainPageRender = function() {
     if (Number(moment().hour(x).format('H')) < Number(moment().format('H'))) {
       taskCol = $('<div class="col-10 time-block past"><textarea  id="Text' + x +'"></textarea></div>');
     } else if (moment().hour(x).format('H') === moment().format('H')) {
-      taskCol = $('<div class="col-10 time-block present"><textarea class="form-control" id="Text' + x +'"></textarea></div>');
+      taskCol = $('<div class="col-10 time-block present"><textarea class="" id="Text' + x +'"></textarea></div>');
     } else {
       taskCol = $('<div class="col-10 time-block future"></div>');
     }
@@ -45,7 +45,7 @@ const mainPageRender = function() {
   }
 };
 
-setInterval(mainPageRender(), 60000);
+setInterval(mainPageRender(), 1000);
 
 // hook reset button click
 $('#resetEvents').on('click', function() {
