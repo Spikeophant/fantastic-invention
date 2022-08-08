@@ -4,7 +4,7 @@ if (localStorage.getItem('events') == null) {
 } else {
   events = JSON.parse(localStorage.getItem('events'));
 }
-console.log(events);
+
 // get the current day and display in the jumbotron.
 
 $('#currentDay').text(moment().format('dddd, MMMM Do'));
@@ -27,11 +27,10 @@ const mainPageRender = function() {
     } else {
       taskCol = $('<div class="col-10 time-block future"></div>');
     }
-    const addCol = $('<div class="col-1 saveBtn fa-save fa-lg fa" id="' + x + '"><a href="#"></a></div>');
+    const addCol = $('<div class="col-1 saveBtn fa-save fa-3x fa text-center" id="' + x + '"><a href="#"></a></div>');
     $('.container').append($('<div class=row>')
         .append(timeCol, taskCol, addCol));
     addCol.on('click', function(event) {
-      console.log($('#Text' + x).val());
       if ($('#Text' + x).val() !== '') {
         events[x] = $('#Text' + x).val();
         localStorage.setItem('events', JSON.stringify(events));
@@ -48,3 +47,10 @@ const mainPageRender = function() {
 };
 
 setInterval(mainPageRender(), 60000);
+
+// hook reset button click
+$('#resetEvents').on('click', function() {
+  events = {};
+  localStorage.setItem('events', JSON.stringify(events));
+  location.reload();
+});
