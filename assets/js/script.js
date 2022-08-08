@@ -27,7 +27,7 @@ const mainPageRender = function() {
     } else {
       taskCol = $('<div class="col-10 time-block future"></div>');
     }
-    const addCol = $('<div class="col-1 saveBtn fa-save fa-3x fa text-center" id="' + x + '"><a href="#"></a></div>');
+    const addCol = $('<button class="btn btn-primary col-1 saveBtn fa-save fa-3x fa text-center" id="' + x + '"></button>');
     $('.container').append($('<div class=row>')
         .append(timeCol, taskCol, addCol));
     addCol.on('click', function(event) {
@@ -40,9 +40,8 @@ const mainPageRender = function() {
     });
     // Write events from storage.
     for (const key in events) {
-      console.log(events[key]);
       $('#Text' + key).val(events[key]);
-    };
+    }
   }
 };
 
