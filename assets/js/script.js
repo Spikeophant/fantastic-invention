@@ -1,4 +1,10 @@
-
+// initalize object store of events.
+if (localStorage.getItem('events') == null) {
+  events = {};
+} else {
+  events = JSON.parse(localStorage.getItem('events'));
+}
+console.log(events);
 // get the current day and display in the jumbotron.
 
 $('#currentDay').text(moment().format('dddd, MMMM Do'));
@@ -6,6 +12,7 @@ $('#currentDay').text(moment().format('dddd, MMMM Do'));
 setInterval(function() {
   $('#currentTime').text(moment().format('H:mm:ss A'));
 }, 1000);
+
 
 const mainPageRender = function() {
   for (let x = 7; x<19; x++) {
@@ -23,9 +30,20 @@ const mainPageRender = function() {
     const addCol = $('<div class="col-1 saveBtn fa-save fa-lg fa" id="' + x + '"><a href="#"></a></div>');
     $('.container').append($('<div class=row>')
         .append(timeCol, taskCol, addCol));
-    addCol.on('click', function() {
-
+    addCol.on('click', function(event) {
+      console.log($('#Text' + x).val());
+      if ($('#Text' + x).val() !== '') {
+        events[x] = $('#Text' + x).val();
+        localStorage.setItem('events', JSON.stringify(events));
+      } else {
+        alert('No event entered.');
+      }
     });
+    // Write events from storage.
+    for (const key in events) {
+      console.log(events[key]);
+      $('#Text' + key).val(events[key]);
+    };
   }
 };
 
