@@ -25,7 +25,7 @@ const mainPageRender = function() {
     } else if (moment().hour(x).format('H') === moment().format('H')) {
       taskCol = $('<div class="col-10 time-block present"><textarea class="" id="Text' + x +'"></textarea></div>');
     } else {
-      taskCol = $('<div class="col-10 time-block future"></div>');
+      taskCol = $('<div class="col-10 time-block future"<textarea class="" id="Text' + x +'"></textarea></div>');
     }
     const addCol = $('<button class="btn btn-primary col-1 saveBtn fa-save fa-3x fa text-center" id="' + x + '"></button>');
     $('.container').append($('<div class=row>')
