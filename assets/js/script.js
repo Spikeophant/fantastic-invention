@@ -21,11 +21,11 @@ const mainPageRender = function() {
         .text(moment().hour(x).format('h A'));
     // Make sure to make the moment output a number!
     if (Number(moment().hour(x).format('H')) < Number(moment().format('H'))) {
-      taskCol = $('<textarea class="col-10 time-block past"  id="Text' + x +'"></textarea>');
+      taskCol = $('<textarea class="col-10 past"  id="Text' + x +'"></textarea>');
     } else if (moment().hour(x).format('H') === moment().format('H')) {
-      taskCol = $('<textarea class="col-10 time-block present" id="Text' + x +'"></textarea>');
+      taskCol = $('<textarea class="col-10 present" id="Text' + x +'"></textarea>');
     } else {
-      taskCol = $('<textarea class="col-10 time-block future" id="Text' + x +'"></textarea>');
+      taskCol = $('<textarea class="col-10 future" id="Text' + x +'"></textarea>');
     }
     const addCol = $('<button class="btn btn-primary col-1 saveBtn fa-save fa-3x fa text-center" id="' + x + '"></button>');
     $('.container').append($('<div class=row>')
