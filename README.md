@@ -8,11 +8,9 @@ URL: [https://spikeophant.github.io/fantastic-invention/](https://spikeophant.gi
 ## Usage
 
 Go to [Fantastic Invention](https://spikeophant.github.io/fantastic-invention/) and click in a box to add an event, click save to persist through reloads.  Click reset to reset!
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
-
+  
+![Fantastic Invetion Screenshot](assets/Screen Shot 2022-08-08 at 8.48.05 PM.png)
+    
 ## Credits
 
 spikeophant
